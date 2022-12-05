@@ -44,7 +44,11 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i <= lp_end_cond; i++)
 	{
 		if (int_array[i] != int_array[size_of_array - (i + 1)])
+		{
+			free(int_array);
 			return (0);
+		}
 	}
+	free(int_array);
 	return (1);
 }
