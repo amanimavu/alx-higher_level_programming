@@ -4,6 +4,7 @@
 def print_matrix_integer(matrix=[[]]):
     if matrix == [[]]:
         print("")
+	return None
     else:
         for row in matrix:
             for col in range(0, len(row)):
