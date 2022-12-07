@@ -14,28 +14,26 @@ int is_palindrome(listint_t **head)
 	listint_t *current;
 	int *int_array, i, size_of_array, lp_end_cond;
 
-	int_array = malloc(sizeof(int));
+	i = 1;
+	current = *head;
+	while (current)
+	{
+		current = current->next;
+		i += 1;
+	}
+	size_of_array = i - 1;
+	int_array = malloc(sizeof(int) * size_of_array);
 	if (!int_array)
 	{
 		printf("malloc failed");
 		exit(EXIT_FAILURE);
 	}
-
-	i = 1;
 	current = *head;
-	while (current)
+	for (i = 0; i < size_of_array; i++)
 	{
-		int_array[i - 1] = current->n;
-		int_array = realloc(int_array, sizeof(int) * (i + 1));
-		if (!int_array)
-		{
-			printf("realloc failed");
-			exit(EXIT_FAILURE);
-		}
+		int_array[i] = current->n;
 		current = current->next;
-		i += 1;
 	}
-	size_of_array = i - 1;
 	if (size_of_array % 2)
 		lp_end_cond = (size_of_array / 2) - 1;
 	else
