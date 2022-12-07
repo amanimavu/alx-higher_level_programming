@@ -7,6 +7,4 @@ def uniq_add(my_list=[]):
     if my_list:
         for i in set(my_list):
             sum_of_unique_num += i
-    else:
-        return
     return sum_of_unique_num
