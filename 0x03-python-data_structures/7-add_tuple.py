@@ -9,6 +9,7 @@ def turn_to_array(tpl):
         lst = lst[:2]
     return lst
 
+
 def add_tuple(tuple_a=(), tuple_b=()):
     array_a = turn_to_array(tuple_a)
     array_b = turn_to_array(tuple_b)
