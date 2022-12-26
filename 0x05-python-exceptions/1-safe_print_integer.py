@@ -5,9 +5,8 @@
 
 def safe_print_integer(value):
     try:
-        integer = int(value)
+        print("{:d}".format(value))
     except (ValueError, TypeError):
         return False
     else:
-        print("{:d}".format(integer))
-    return True
+        return True
