@@ -5,10 +5,10 @@ def list_division(my_list_1, my_list_2, list_length):
     result_list = []
     for i in range(0, list_length):
         try:
-            operand1 = int(my_list_1[i])
-            operand2 = int(my_list_2[i])
+            operand1 = my_list_1[i]
+            operand2 = my_list_2[i]
             result = operand1 / operand2
-        except (ValueError, TypeError):
+        except TypeError:
             print("wrong type")
             result = 0
         except IndexError:
