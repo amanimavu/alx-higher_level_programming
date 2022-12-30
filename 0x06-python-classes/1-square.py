@@ -4,5 +4,9 @@
 
 class Square:
     '''Initialize instance attributes with __init__ method'''
-    def ___init__(self, size):
+    def __init__(self, size):
         self.__size = size
+
+    @property
+    def size(self):
+        return self.__size
