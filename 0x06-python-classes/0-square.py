@@ -3,5 +3,3 @@
 
 class Square:
     pass
-
-
