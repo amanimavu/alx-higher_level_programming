@@ -2,4 +2,5 @@
 
 
 class Square:
+    '''create an empty class called Square'''
     pass
