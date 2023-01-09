@@ -124,7 +124,7 @@ class Rectangle:
             return ""
         shape_rep_array = []
         for height in range(self.height):
-            shape_rep_array.append(self.print_symbol * self.width)
+            shape_rep_array.append(str(self.print_symbol) * self.width)
             shape_rep_array.append("\n")
         shape_rep_array.pop()
         return "".join(shape_rep_array)
