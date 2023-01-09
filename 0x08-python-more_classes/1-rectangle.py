@@ -20,7 +20,7 @@ This module contains a class Rectangle
 class Rectangle:
     """This is an class Rectangle with instance attribute heigth and width"""
 
-    def __init__(self, width="", height=""):
+    def __init__(self, width=0, height=0):
         """
         initializes height and width of the rectangle
         upon creation of an instance using property
