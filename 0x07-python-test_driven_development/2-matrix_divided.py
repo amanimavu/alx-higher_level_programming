@@ -5,6 +5,7 @@ Module: 2-matrix_divided
 Contents: function used to divide matrix of integers
 """
 
+
 def matrix_divided(matrix, div):
     """
     The matrx_divided function is used to divide a
@@ -27,9 +28,10 @@ def matrix_divided(matrix, div):
         new_matrix.append([])
         for col_num in range(len_of_row1):
             if (type(matrix[row_num][col_num]) is not int and
-                type(matrix[row_num][col_num]) is not float):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-            new_matrix[row_num].append(round(matrix[row_num][col_num] / div, 2))
+               type(matrix[row_num][col_num]) is not float):
+                raise TypeError("matrix must be a matrix(list of lists)
+                                of integers/floats")
+            new_matrix[row_num].append(round(matrix[row_num][col_num]
+                                             / div, 2))
 
     return new_matrix
-
