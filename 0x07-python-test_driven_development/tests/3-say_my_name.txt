@@ -11,12 +11,20 @@ Traceback (most recent call last):
   ...
 TypeError: last_name must be a string
 
+>>> say_my_name(12, "Amani")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+>>> say_my_name(12)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
 >>> say_my_name({"Mavu"},"Amani")
 Traceback (most recent call last):
   ...
 TypeError: first_name must be a string
 
->>> say_my_name("Amani")
+>>> say_my_name("Amani") #doctest: +NORMALIZE_WHITESPACE
 My name is Amani
 
 >>> say_my_name()
