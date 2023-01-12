@@ -22,6 +22,8 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if (type(b) is not int and type(b) is not float):
         raise TypeError("b must be an integer")
-    a = a == a and int(a)
-    b = b == b and int(b)
-    return (a + b)
+    if a != a or abs(a) == float("inf"):
+        return
+    if b != b or abs(b) == float("inf"):
+        return
+    return (int(a) + (b))
