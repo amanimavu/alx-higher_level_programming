@@ -4,6 +4,7 @@ Module: 3-say_my_name
 Contents: function that prints the name of a person
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     The function say_my_name checks if first_name
