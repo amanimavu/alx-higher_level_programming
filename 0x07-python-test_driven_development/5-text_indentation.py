@@ -5,6 +5,7 @@ Content: program that edits text by adding 2 newlines
 after (.), (?) and (:).
 """
 
+
 def text_indentation(text):
     """
     text_indentation function adds newline characters after the
