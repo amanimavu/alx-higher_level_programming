@@ -67,3 +67,11 @@ class TestMaxInteger(unittest.TestCase):
         actual = max_integer([2.344, 54.098, 76.763, 0.678, float("inf")])
         expected = float("inf")
         self.assertEqual(actual, expected)
+
+        actual = max_integer()
+        expected = None
+        self.assertEqual(actual, expected)
+
+        actual = max_integer([34, 1, -3])
+        expected = 34
+        self.assertEqual(actual, expected)
