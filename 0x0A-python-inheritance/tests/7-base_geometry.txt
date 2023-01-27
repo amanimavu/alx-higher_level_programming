@@ -9,12 +9,12 @@ Documentation for the module 7-base_geometry
 >>> bg.integer_validator("my_int", '12')
 Traceback (most recent call last):
 	...
-TypeError: 12 must be an integer
+TypeError: my_int must be an integer
 
 >>> bg.integer_validator("my_int", -1)
 Traceback (most recent call last):
 	...
-ValueError: -1 must be greater than 0
+ValueError: my_int must be greater than 0
 
 >>> bg.area()
 Traceback (most recent call last):
