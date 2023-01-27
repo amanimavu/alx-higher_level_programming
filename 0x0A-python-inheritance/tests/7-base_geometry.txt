@@ -22,3 +22,28 @@ Traceback (most recent call last):
 Exception: area() is not implemented
 
 >>> bg.integer_validator([1, 2, 3], 31)
+
+>>> bg.integer_validator("my_int", [12])
+Traceback (most recent call last):
+	...
+TypeError: my_int must be an integer
+
+>>> bg.integer_validator("my_int", None)
+Traceback (most recent call last):
+	...
+TypeError: my_int must be an integer
+
+>>> bg.integer_validator("my_int", {-19})
+Traceback (most recent call last):
+	...
+TypeError: my_int must be an integer
+
+>>> bg.integer_validator("my_int", {"num": 124})
+Traceback (most recent call last):
+	...
+TypeError: my_int must be an integer
+
+>>> bg.integer_validator("my_int", 12.678)
+Traceback (most recent call last):
+	...
+TypeError: my_int must be an integer
