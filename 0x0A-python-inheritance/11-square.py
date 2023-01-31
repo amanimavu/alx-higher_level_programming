@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 """
 module: 10-square
 resources: the Square class that inherits from
@@ -8,11 +9,12 @@ Rectangle
 Rectangle = __import__("9-rectangle").Rectangle
 
 
-class Square(Rectangle):
+class Square(Rectangle, BaseGeometry):
     """
     Initiliaze the square using size parameter
     """
     def __init__(self, size):
+        self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
