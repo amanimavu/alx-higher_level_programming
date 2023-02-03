@@ -25,11 +25,12 @@ def add_arg_to_file(filename):
             pass
     except Exception:
         array = load_from_json_file(filename)
+    else:
+        array = []
+    finally:
         for i in range(1, arg_count):
             array.append(sys.argv[i])
         save_to_json_file(array, filename)
-    else:
-        save_to_json_file([], filename)
 
 
 if __name__ == "__main__":
