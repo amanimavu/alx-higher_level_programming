@@ -31,6 +31,7 @@ def add_arg_to_file(filename):
     else:
         save_to_json_file([], filename)
 
+
 if __name__ == "__main__":
     storage_file = "add_item.json"
     add_arg_to_file(storage_file)
