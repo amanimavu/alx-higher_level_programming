@@ -6,6 +6,7 @@ resources: class Base, which is the base class of all class
 in this project
 """
 
+
 class Base:
     """
     The goal of this class is to manage the id attribute in
