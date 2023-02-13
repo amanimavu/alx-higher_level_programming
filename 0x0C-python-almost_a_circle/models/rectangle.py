@@ -8,13 +8,23 @@ resources: class Rectangle that inherits from Base class
 
 
 class Rectangle(Base):
+    """
+    The __init__ method is a magic method
+    that initializes instance variables every
+    time an object is created.
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-
+    """
+    The width getter method returns the size
+    of the width of the rectangle.
+    The corresponding setter method is used to
+    set the size of the rectangle.
+    """
     @property
     def width(self):
         return self.__width
@@ -27,6 +37,12 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = width
 
+    """
+    The height getter method is used to return the size
+    of the rectangle's height to the user.
+    While the corresponding height setter method is used
+    to the the size of the rectangle's height.
+    """
     @property
     def height(self):
         return self.__height
@@ -39,6 +55,12 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = height
 
+    """
+    The x getter method is used to set the x coordinate
+    position of the rectangle.
+    Its corresponding setter method is used to set x
+    coordinate of the rectangle
+    """
     @property
     def x(self):
         return self.__x
@@ -51,6 +73,12 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = x
 
+    """
+    The y getter method return the y coordinate
+    position of the rectangle.
+    The corresponding setter method is used to
+    set the y coordinate position.
+    """
     @property
     def y(self):
         return self.__y
@@ -63,13 +91,25 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
+    """
+    The area method is used to return the area of the
+    specified instance rectangle to the user
+    """
     def area(self):
         return self.width * self.height
 
+    """
+    The display method print a graphical representation
+    of the rectangle using #
+    """
     def display(self):
         for row in self.height:
             print(self.width * '#')
 
+    """
+    The magical __str__ method is used to return the details
+    of the rectangle in a manner that is well presented
+    """
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".
                 format(self.id, self.x, self.y, self.width, self.height)
