@@ -8,6 +8,12 @@ from base import Base
 
 
 class Rectangle(Base):
+    """
+    The Rectangle class defines how a create a rectangle
+    by defining its width, height its position in the
+    cartesian plane. It also provides methods to compute
+    the retangle's area
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         The __init__ method is a magic method
