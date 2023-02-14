@@ -22,13 +22,15 @@ class Rectangle(Base):
     """
     The width getter method returns the size
     of the width of the rectangle.
-    The corresponding setter method is used to
-    set the size of the rectangle.
     """
     @property
     def width(self):
         return self.__width
 
+    """
+    The corresponding setter method is used to
+    set the size of the rectangle.
+    """
     @width.setter
     def width(self, width):
         if type(width) is not int:
@@ -40,13 +42,15 @@ class Rectangle(Base):
     """
     The height getter method is used to return the size
     of the rectangle's height to the user.
-    While the corresponding height setter method is used
-    to the the size of the rectangle's height.
     """
     @property
     def height(self):
         return self.__height
 
+    """
+    While the corresponding height setter method is used
+    to the the size of the rectangle's height.
+    """
     @height.setter
     def height(self, height):
         if type(height) is not int:
@@ -58,13 +62,15 @@ class Rectangle(Base):
     """
     The x getter method is used to set the x coordinate
     position of the rectangle.
-    Its corresponding setter method is used to set x
-    coordinate of the rectangle
     """
     @property
     def x(self):
         return self.__x
 
+    """
+    Its corresponding setter method is used to set x
+    coordinate of the rectangle
+    """
     @x.setter
     def x(self, x):
         if type(x) is not int:
@@ -76,13 +82,15 @@ class Rectangle(Base):
     """
     The y getter method return the y coordinate
     position of the rectangle.
-    The corresponding setter method is used to
-    set the y coordinate position.
     """
     @property
     def y(self):
         return self.__y
 
+    """
+    The corresponding setter method is used to
+    set the y coordinate position.
+    """
     @y.setter
     def y(self, y):
         if type(y) is not int:
