@@ -1,4 +1,6 @@
 import unittest
+import io
+import sys
 """
 module: test_rectangle - used to test the rectangle module
 """
@@ -146,6 +148,17 @@ class TestRectangle(unittest.TestCase):
         is returned from __str__ magic method
         """
         self.assertEqual(str(self.rect_2), "[Rectangle] (5) 0/0 - 21/11")
+
+    def test_display(self):
+        """
+        test_display checks whether the rectangle is
+        correctly printed to the stdout
+        """
+        capturedOutput = io.StringIO()  # Create StringIO object
+        sys.stdout = capturedOutput     # redirect stdout
+        self.rect_4.display()           # Call function
+        sys.stdout = sys.__stdout__     # Reset redirect
+        self.assertEqual(capturedOutput.getvalue(), "###\n###\n###\n")
 
 
 if __name__ == "__main__":
