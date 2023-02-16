@@ -135,12 +135,24 @@ class Rectangle(Base):
                 format(self.id, self.x, self.y, self.width, self.height)
                 )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         update method is used to assign an argument to
         each attribute.More like changing the values
         set for the attributes
         """
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = value
+            if key == "width":
+                self.width = value
+            if key == "height":
+                self.height = value
+            if key == "x":
+                self.x = value
+            if key == "y":
+                self.y = value
+
         arg_count = len(args)
         if arg_count > 0:
             self.id = args[0]
@@ -152,3 +164,16 @@ class Rectangle(Base):
             self.x = args[3]
         if arg_count > 4:
             self.y = args[4]
+
+    def to_dictionary(self):
+        """
+        to_dictionary returns a dictionary of instance
+        attributes such as id, width, height, x and y
+        """
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
