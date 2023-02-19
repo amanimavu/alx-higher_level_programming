@@ -4,23 +4,46 @@ module: square
 resources: a class named Square that inherits
 from Rectangle
 """
-from .rectangle import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """
+    This is a class Square that inherits from
+    rectangle it contains a method called size
+    that sets the width and height to be the
+    same value
+    """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        This method initializes instance variables of
+        a square object using the super class
+        """
         super().__init__(x=x, y=y, width=size, height=size, id=id)
 
     @property
     def size(self):
+        """
+        This method return the length of the
+        side of a square
+        """
         return self.width
 
     @size.setter
     def size(self, size):
+        """
+        This method sets the length of the side
+        of a square
+        """
         self.width = size
         self.height = size
 
     def __str__(self):
+        """
+        This method is a magical method that returns
+        the form in which the object will be represented
+        when called with print() or str()
+        """
         return "[Square] ({}) {}/{} - {}".format(
                                                  self.id,
                                                  self.x,
@@ -28,6 +51,10 @@ class Square(Rectangle):
                                                  self.size)
 
     def update(self, *args, **kwargs):
+        """
+        This method modifies the field of a square
+        object previously created
+        """
         arg_count = len(args)
         for key, value in kwargs.items():
             if key == 'id':
