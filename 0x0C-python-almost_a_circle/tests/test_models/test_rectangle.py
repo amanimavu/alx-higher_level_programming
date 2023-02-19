@@ -15,7 +15,6 @@ class TestRectangle(unittest.TestCase):
         all necessary resources required to execute the
         TestCases are available
         """
-        print("Set up")
         self.rect_1 = Rectangle(10, 22)
         self.w1 = 37
         self.x1 = 4
@@ -159,6 +158,16 @@ class TestRectangle(unittest.TestCase):
         self.rect_4.display()           # Call function
         sys.stdout = sys.__stdout__     # Reset redirect
         self.assertEqual(capturedOutput.getvalue(), "###\n###\n###\n")
+
+    def test_update(self):
+        self.assertEqual(self.rect_3.id, 7)
+        self.assertEqual(self.rect_3.width, 15)
+        self.rect_3.update(89, 32)
+        self.assertEqual(self.rect_3.id, 89)
+        self.assertEqual(self.rect_3.width, 32)
+
+    def test_to_dictionary(self):
+        self.assertEqual(self.rect_3.to_dictionary(), {'id': 7, 'width': 15, 'height': 12, 'x': 8, 'y': 4})
 
 
 if __name__ == "__main__":
