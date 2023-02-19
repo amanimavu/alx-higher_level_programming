@@ -170,10 +170,10 @@ class Rectangle(Base):
         to_dictionary returns a dictionary of instance
         attributes such as id, width, height, x and y
         """
-        return {
-                'id': self.id,
-                'width': self.width,
-                'height': self.height,
-                'x': self.x,
-                'y': self.y
-                }
+        final_dict = {}
+        prefix = '_{}__'.format(self.__class__.__name__)
+        for key, value in self.__dict__.items():
+            if prefix in key:
+                key = key.replace(prefix, '')
+            final_dict[key] = value
+        return {x :final_dict[x] for x in sorted(final_dict, key=len)}
