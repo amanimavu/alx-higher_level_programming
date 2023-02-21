@@ -17,6 +17,10 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        This method initializes the the instance variables
+        of the object
+        """
         if id is not None:
             self.id = id
         else:
@@ -24,10 +28,18 @@ class Base:
             self.id = type(self).__nb_objects
 
     def to_json_string(list_dictionaries):
+        """
+        This method takes a python object and converts
+        it to a json string
+        """
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        This method takes a python object, converts it
+        to a json string then saves it to a json file
+        """
         new_list_objs = []
         for item in list_objs:
             new_list_objs.append(item.to_dictionary())
@@ -37,16 +49,28 @@ class Base:
             file.write(file_contents)
 
     def from_json_string(json_string):
+        """
+        This method returns a python object from a json
+        string
+        """
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        This method creates a new object
+        """
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
+        """
+        This method retrieves a list of instances
+        from a file with similar name as the class
+        which called the method
+        """
         list_of_instances = []
         filename = "{}.json".format(cls.__name__)
         with open(filename) as file:
