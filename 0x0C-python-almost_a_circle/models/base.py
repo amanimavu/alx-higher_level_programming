@@ -27,6 +27,7 @@ class Base:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         This method takes a python object and converts
@@ -48,6 +49,7 @@ class Base:
         with open(filename, 'w') as file:
             file.write(file_contents)
 
+    @staticmethod
     def from_json_string(json_string):
         """
         This method returns a python object from a json
