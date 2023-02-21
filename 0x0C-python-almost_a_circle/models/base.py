@@ -33,7 +33,6 @@ class Base:
         This method takes a python object and converts
         it to a json string
         """
-        print(type(list_dictionaries))
         if list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
