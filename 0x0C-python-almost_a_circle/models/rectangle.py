@@ -176,4 +176,4 @@ class Rectangle(Base):
             if prefix in key:
                 key = key.replace(prefix, '')
             final_dict[key] = value
-        return {x :final_dict[x] for x in sorted(final_dict, key=len)}
+        return {x: final_dict[x] for x in sorted(final_dict, key=len)}
