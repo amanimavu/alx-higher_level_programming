@@ -33,6 +33,8 @@ class Base:
         This method takes a python object and converts
         it to a json string
         """
+        if type(list_dictionaries) is None:
+            return []
         return json.dumps(list_dictionaries)
 
     @classmethod
