@@ -44,8 +44,9 @@ class Base:
         to a json string then saves it to a json file
         """
         new_list_objs = []
-        for item in list_objs:
-            new_list_objs.append(item.to_dictionary())
+        if type(list_objs) is list:
+            for item in list_objs:
+                new_list_objs.append(item.to_dictionary())
         filename = "{}.json".format(cls.__name__)
         file_contents = Base.to_json_string(new_list_objs)
         with open(filename, 'w') as file:
