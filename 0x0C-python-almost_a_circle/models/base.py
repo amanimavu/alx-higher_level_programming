@@ -84,13 +84,17 @@ class Base:
         """
         list_of_instances = []
         filename = "{}.json".format(cls.__name__)
-        with open(filename) as file:
-            # str_list_of_dict - is a json string representation of
-            # a list of str_list_of_dict - is a json string
-            # representation of a list of dictionaries containing
-            # instances variables(fields) with their values
-            str_list_of_dict = file.read()
-        list_output = cls.from_json_string(str_list_of_dict)
-        for dictionary in list_output:
-            list_of_instances.append(cls.create(**dictionary))
+        try:
+            with open(filename) as file:
+                # str_list_of_dict - is a json string representation of
+                # a list of str_list_of_dict - is a json string
+                # representation of a list of dictionaries containing
+                # instances variables(fields) with their values
+                str_list_of_dict = file.read()
+        except FileNotFoundError:
+            return []
+        else:
+            list_output = cls.from_json_string(str_list_of_dict)
+            for dictionary in list_output:
+                list_of_instances.append(cls.create(**dictionary))
         return list_of_instances
