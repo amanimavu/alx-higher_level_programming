@@ -58,6 +58,8 @@ class Base:
         This method returns a python object from a json
         string
         """
+        if json_string is None or json_string == '':
+            return []
         return json.loads(json_string)
 
     @classmethod
