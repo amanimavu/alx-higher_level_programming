@@ -24,7 +24,7 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            type(self).__nb_objects += 1
+            Base.__nb_objects += 1
             self.id = type(self).__nb_objects
 
     @staticmethod
@@ -60,6 +60,7 @@ class Base:
         """
         if json_string is None or json_string == '':
             return []
+
         return json.loads(json_string)
 
     @classmethod
@@ -67,7 +68,10 @@ class Base:
         """
         This method creates a new object
         """
-        dummy = cls(1, 1)
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
